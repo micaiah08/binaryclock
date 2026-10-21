@@ -1,3 +1,6 @@
+#ifndef DISPLAY_H
+#define DISPLAY_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -10,3 +13,6 @@ void display_hours(int hours);
 void display_minutes(int minutes);
 void display_seconds(int seconds);
 void close_display(void);
+
+#endif
+
