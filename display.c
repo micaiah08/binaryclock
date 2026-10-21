@@ -37,7 +37,7 @@ void display_hours(int hours) {
 
  for (int i =0; i<6; i++) {
 	if (hours & (1<<i)) {
-	bm->pixel[0][7 - i] = BLUE;
+	bm->pixel[7][7 - i] = BLUE;
 }
 }
 }
@@ -56,7 +56,7 @@ void display_seconds(int seconds) {
 	sense_fb_bitmap_t *bm = fb->bitmap;
         for(int i = 0; i<6; i++) {
 	  if (seconds & (1<<i)) {
-  	       bm->pixel[7][7 - i] = RED;
+  	       bm->pixel[0][7 - i] = RED;
 }
 }
 
