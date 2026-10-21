@@ -1,17 +1,24 @@
+
+#include <stdio.h>
 #include "display.h"
 
-int main(void) {
-    open_display();
-    fprintf(stderr,"Going to print a sigma!\n");
-    display_sigma();
-    sleep(5);
-    fprintf(stderr,"Did it!\n");
-    clear_sigma();
-    sleep(1);
-    /* Note that the below will not work because main.c doesn't know
-     * anything about the 'fb' variable which is scoped in display.c
-     */
-    //freeFrameBuffer(fb);
-    fprintf(stderr,"Exiting.\n");
+int main(void)
+{
+    int hours;
+    int minutes;
+    int seconds;
+
+    if (open_display() == 0) {
+        return 1;
+    }
+
+    while (scanf("%d:%d:%d", &hours, &minutes, &seconds) == 3) {
+        display_time(hours, minutes, seconds);
+    }
+
+    close_display();
+
     return 0;
 }
+
+
